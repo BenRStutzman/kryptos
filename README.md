@@ -1,7 +1,7 @@
 # kryptos
-Tools for codebreaking
+Tools for codebreaking, designed for the Kryptos codebreaking competition hosted by CWU.
 
-I use them by starting python in my command line, then running
+I use them by starting Python in my command line, then running
 
 from codes import *
 
