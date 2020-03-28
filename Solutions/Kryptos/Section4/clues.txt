@@ -1,0 +1,7 @@
+NORTHEAST: 26-34 (QQPRNGKSS) keyword YWOYNKYRI
+BERLIN: 64-69 (NYPVTT) keyword OIEELY
+CLOCK: 70-74 (MZFPK) keyword BAQKC
+
+BERLINCLOCK: 64-74 (NYPVTTMZFPK) keyword OIECBAQKELY
+
+running key: xxxxxxxxxxxxxxxxxxxxxxxxxRIYWOYNKYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxELYOIECBAQKxxxxxxxxxxxxxxxxxxxxxxx

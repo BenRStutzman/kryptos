@@ -1,0 +1,5 @@
+Use cipher of JFK (weird phonetic spelling)
+
+Target is Brighton Bridge on the fourth of May at five PM
+
+(Playfair with keyword WORLDWARTWO)
