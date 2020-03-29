@@ -9,7 +9,6 @@ def group(ct, row_len = 0, col_len = 0):
         split_index = (ct_len % col_len) * row_len
         return group(ct[:split_index], row_len = row_len) + group(ct[split_index:], row_len = row_len - 1)
 
-
 def rotate(ct_list):
     rotated_list = [[row[i] for row in ct_list][::-1] for i in range(len(ct_list[0]))]
     return [''.join(row) for row in rotated_list]

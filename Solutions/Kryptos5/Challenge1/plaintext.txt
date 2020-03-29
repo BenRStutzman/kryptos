@@ -1,0 +1,4 @@
+juniper
+
+(binary, tall "stems" are 0s and short ones are 1s, group into fives
+and convert to letters based on alphabetic indices)

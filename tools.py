@@ -1,6 +1,6 @@
 from codes import *
 
-modules = ['tools', 'freq', 'caesar', 'vig', 'column', 'skip', 'hill', 'mpsc']
+modules = ['tools', 'freq', 'caesar', 'vig', 'column', 'skip', 'hill', 'ragbaby', 'binary']
 
 def restart():
     #load all the modules again, so functions will be updated

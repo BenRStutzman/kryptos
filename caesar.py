@@ -15,9 +15,15 @@ def enc(ct, number):
     return pt
 
 def dec(ct, number):
-    return csr_encrypt(ct, -number)
+    return enc(ct, -number)
 
-def try_dec(ct, decode = True):
+def try_dec(ct):
     for number in range(26):
         print("\nencoding shift:", number)
-        print(caesar(ct, number, decode))
+        print(dec(ct, number))
+
+def try_dec_list(ct):
+    answers = []
+    for number in range(26):
+        answers.append(dec(ct, number))
+    return answers
