@@ -1,0 +1,4 @@
+Arms drop at silo four on twentieth.
+
+(Vigenere, key is "pineapple" revealed through third value of RGBs on website
+converted to ASCII - first greens, then reds, then blacks)

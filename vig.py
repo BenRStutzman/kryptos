@@ -26,6 +26,13 @@ def enc(pt, key, tableau = 'standard'):
             ct += letter
     return ct
 
+def get_tableau(tableau):
+    tableau_file = 'tableaus/' + tableau + '.txt'
+    if not os.path.exists(tableau_file):
+        make_tableau(tableau, filename = tableau)
+    with open(tableau_file) as f:
+        return f.read().splitlines()
+
 def dec(ct, key = '', tableau = 'standard',
                 real_key = '', key_len = 0, first_col = [], real_tableau = [],
                 first_row = ''):
@@ -36,8 +43,7 @@ def dec(ct, key = '', tableau = 'standard',
         if not key:
             print("No key or real_key included...")
             raise Exception
-        with open('tableaus/' + tableau + '.txt') as f:
-            tableau = f.read().splitlines()
+        tableau = get_tableau(tableau)
         key = key.upper()
         key_len = len(key)
         first_col = [row[0] for row in tableau][1:]
@@ -61,8 +67,7 @@ def pt_and_key(pt, key):
 def try_dec(ct, key_len = 0, crib = '', words = [],
     thresholds = {'E': 0.07, 'T': 0.05, 'A': 0.03}, tableau = 'standard',
     rotations = False):
-    with open('tableaus/' + tableau + '.txt') as f:
-        tableau = f.read().splitlines()
+    tableau = get_tableau(tableau)
     first_col = [row[0] for row in tableau][1:]
     first_row = tableau[0][1:]
     tableau = [row[1:] for row in tableau[1:]]
@@ -106,8 +111,7 @@ def try_dec(ct, key_len = 0, crib = '', words = [],
 
 def strange_key(ct, crib, tableau = 'standard'):
     ct = ''.join(ct.split())
-    with open('tableaus/' + tableau + '.txt') as f:
-        tableau = f.read().splitlines()
+    tableau = get_tableau(tableau)
     crib = crib.upper()
     crib_len = len(crib)
     first_col = [row[0] for row in tableau][1:]
@@ -131,6 +135,10 @@ def strange_key(ct, crib, tableau = 'standard'):
                 key += letter
         keys.append(key)
 
+    if len(keys) == 1:
+        print('key:', keys[0])
+        return
+
     choice = input("Enter 'o' to examine one at a time or 'a' to print all at once: ")
     if choice.lower() == 'o':
         print("\nPossible keys:")
@@ -141,8 +149,15 @@ def strange_key(ct, crib, tableau = 'standard'):
         for pos, key in enumerate(keys):
             print('\nPosition %d:\n%s' % (pos + 1, key))
 
-def make_tableau(first_line, filename = 'new_tableau', match_grid = True):
-    first_line = first_line.upper()
+def crib_and_pos(ct, pos, crib, tableau = 'standard'):
+    seg = ct[pos - 1 : pos - 1 + len(crib)]
+    strange_key(seg, crib = crib, tableau = tableau)
+
+def make_tableau(keyword, filename = 'new_tableau', match_grid = True):
+    first_line = ''
+    for letter in keyword.upper():
+        if letter not in first_line:
+            first_line += letter
     for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
         if letter not in first_line:
             first_line += letter

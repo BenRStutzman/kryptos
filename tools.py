@@ -1,6 +1,7 @@
 from codes import *
 
-modules = ['tools', 'freq', 'caesar', 'vig', 'column', 'skip', 'hill', 'ragbaby', 'binary']
+modules = ['tools', 'freq', 'caesar', 'vig', 'column', 'skip', 'hill',
+            'ragbaby', 'binary', 'trinary', 'mexican']
 
 def restart():
     #load all the modules again, so functions will be updated
@@ -22,5 +23,8 @@ def read_ct(filename = 'ciphertext.txt', unformat = True):
     else:
         return ct
 
-def read_pt(filename = 'plaintext.txt'):
-    return read_ct(filename = filename)
+def read_pt(filename = 'plaintext.txt', unformat = True):
+    filename = str(filename)
+    if filename.isdigit():
+        filename = 'plaintext' + filename + '.txt'
+    return read_ct(filename = filename, unformat = unformat)

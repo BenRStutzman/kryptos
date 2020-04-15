@@ -1,0 +1,5 @@
+Get to: Denver
+Pick up location: Ruby Hill
+Time: Seven PM
+
+(Bacon cipher with first half of alphabet = 0, second half = 1)

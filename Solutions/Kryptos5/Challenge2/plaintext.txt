@@ -4,3 +4,5 @@ message. Do not, I repeat, do not reveal the code word to Mickey...
 we believe him to be working for the police but do not expose our
 suspicion. We will change our enciphering technique in future messages
 to use the rag baby cipher.
+
+(substitution)

@@ -1,0 +1,4 @@
+Now our secret has been discovered. Must change communication methods. Meet at old
+barn on first. Bring package and device.
+
+(SWICH cipher as described in challenge, with keyword NEWS)
