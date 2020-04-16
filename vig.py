@@ -202,9 +202,9 @@ def IC(ct, interval = 0):
         index = 0
     return index
 
-def try_intervals(ct, sort = True):
+def try_ICs(ct, sort = True, max_int = 30):
     ICs = []
-    for interval in range(1, len(ct) + 1):
+    for interval in range(1, max_int + 1):
         index = IC(ct, interval)
         ICs.append([interval, index])
     if sort:
