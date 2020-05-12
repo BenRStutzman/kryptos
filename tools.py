@@ -12,6 +12,18 @@ def restart():
 def despace(ct):
     return ''.join(ct.split())
 
+def word_from_order(order):
+    with open('all_words.txt', 'r') as f:
+        words = f.read().splitlines()
+    for pre_word in words:
+        word = ''
+        for letter in pre_word:
+            if letter not in word:
+                word += letter
+        if len(word) == 6:
+            if ord(word[4]) < ord(word[0]) < ord(word[5]) < ord(word[2]) < ord(word[1]) < ord(word[3]):
+                print(pre_word)
+
 def read_ct(filename = 'ciphertext.txt', unformat = True):
     filename = str(filename)
     if filename.isdigit():
